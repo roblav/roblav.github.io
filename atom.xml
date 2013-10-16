@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Rob Lav]]></title>
   <link href="http://roblav.github.io/atom.xml" rel="self"/>
   <link href="http://roblav.github.io/"/>
-  <updated>2013-10-16T12:31:58+01:00</updated>
+  <updated>2013-10-16T13:05:34+01:00</updated>
   <id>http://roblav.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Rob Lavender]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Responsive Web Design In Drupal]]></title>
+    <title type="html"><![CDATA[Responsive Web Design in Drupal]]></title>
     <link href="http://roblav.github.io/blog/2013/10/01/Responsive-Web-Design-in-Drupal/"/>
-    <updated>2013-10-01T00:00:00+01:00</updated>
+    <updated>2013-10-01T13:00:00+01:00</updated>
     <id>http://roblav.github.io/blog/2013/10/01/Responsive-Web-Design-in-Drupal</id>
     <content type="html"><![CDATA[<p>This blog post is coming off the back of a presentation that I recently gave at my local Drupal meet up. This is an opportunity for me to review that presentation and consolidate some of my thoughts.</p>
 
@@ -34,6 +34,9 @@
 
 
 <p>I’d also recommend Ethan’s book on RWD &ndash; <a href="http://www.abookapart.com/products/responsive-web-design">http://www.abookapart.com/products/responsive-web-design</a></p>
+
+<!-- more -->
+
 
 <p>Something to bare in mind there are myriad of overlapping techniques that will often be discussed using umbrella term responsive web design; mobile first, progressive enhancement, graceful degredation. There are differences between each of these strategies so it&rsquo;s worth finding out about them and experimenting to find out the best mix for you.</p>
 
