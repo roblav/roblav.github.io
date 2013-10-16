@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Responsive Web Design in Drupal"
+date: 2013-10-01 13:00
+comments: true
+categories: 
+---
+
 This blog post is coming off the back of a presentation that I recently gave at my local Drupal meet up. This is an opportunity for me to review that presentation and consolidate some of my thoughts.
 
 As I was preparing I quickly realised that a 1 hour presentation about RWD in Drupal was only really ever going to scratch the surface. My primary objective was to give the audience a brief primer about RWD and then open up the discussion about our collective knowledge and experience.
@@ -11,6 +19,8 @@ Responsive web design really started from an [article on A List Apart](http://al
 *   Media queries
 
 I’d also recommend Ethan’s book on RWD - http://www.abookapart.com/products/responsive-web-design
+
+<!-- more -->
 
 Something to bare in mind there are myriad of overlapping techniques that will often be discussed using umbrella term responsive web design; mobile first, progressive enhancement, graceful degredation. There are differences between each of these strategies so it's worth finding out about them and experimenting to find out the best mix for you.
 
