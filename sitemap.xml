@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://roblav.github.io/blog/2013/10/01/Responsive-Web-Design-in-Drupal/</loc>
+        <lastmod>2013-10-16T13:01:26+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://roblav.github.io/about/</loc>
+        <lastmod>2013-10-16T12:48:20+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://roblav.github.io/archives/</loc>
+        <lastmod>2013-10-16T13:01:26+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://roblav.github.io/blog/archives/</loc>
+        <lastmod>2013-10-16T13:01:26+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://roblav.github.io/blog/</loc>
+        <lastmod>2013-10-16T13:01:26+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://roblav.github.io/</loc>
+        <lastmod>2013-10-16T13:01:26+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://roblav.github.io/robots.txt</loc>
+        <lastmod>2013-10-16T12:42:34+01:00</lastmod>
+    </url>
+</urlset>
