@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | RobLav]]></title>
   <link href="http://roblav.github.io/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://roblav.github.io/"/>
-  <updated>2013-11-15T15:09:51+00:00</updated>
+  <updated>2013-11-15T15:19:48+00:00</updated>
   <id>http://roblav.github.io/</id>
   <author>
     <name><![CDATA[Rob Lavender]]></name>
@@ -85,6 +85,10 @@ and CSS shapes and Unicode entities can be scaled, unlike bitmap images.</p>
 <h3>Further reading:</h3>
 
 <p><a href="http://www.standardista.com/css3/creating-counters-with-generated-content/">standardista.com &ndash; Generated content</a></p>
+
+<h4>&mdash;Update Nov 2013</h4>
+
+<p>It&rsquo;s worth checking which Unicode entities are available for devices like iPad, if you&rsquo;re wanting your site to look good for those devices. I recently found this out while developing a site and the Unicode characters that I was using weren&rsquo;t available. The results weren&rsquo;t great. The easiest way to check is by viewing <a href="http://unicode-table.com">unicode-table.com</a> on the device and you can easily see which characters are available.</p>
 <div class="footnotes">
 <hr/>
 <ol>
