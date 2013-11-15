@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: css | RobLav]]></title>
+  <link href="http://roblav.github.io/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://roblav.github.io/"/>
+  <updated>2013-11-15T15:09:51+00:00</updated>
+  <id>http://roblav.github.io/</id>
+  <author>
+    <name><![CDATA[Rob Lavender]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CSS Generated Content]]></title>
+    <link href="http://roblav.github.io/blog/2013/10/25/css-generated-content/"/>
+    <updated>2013-10-25T16:44:00+01:00</updated>
+    <id>http://roblav.github.io/blog/2013/10/25/css-generated-content</id>
+    <content type="html"><![CDATA[<p><img src="/images/css-gen-content-1.jpg" title="Examples of CSS Generated Content" ></p>
+
+<p>Generated content is content that can be added via css. The content doesn&rsquo;t appear in the DOM but is
+visable on the page to the user. For this reason generated content is perfect for design embelishments,
+but not good for user required content, as anyone using IE7 or older won&rsquo;t be able to see it.</p>
+
+<p>The other advantages are there is one less request to the server if it replaces an image on the page,
+and CSS shapes and Unicode entities can be scaled, unlike bitmap images.</p>
+
+<h3>How does it work</h3>
+
+<p>Use the :before or :after pseudo class to make use of the content property.</p>
+
+<pre><code>div:after {
+    content: "";
+}
+</code></pre>
+
+<p>If you use a clearfix class to clear floats, you&rsquo;ve probably already used generated content.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<pre><code>.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</code></pre>
+
+<!-- more -->
+
+
+<h3>Shapes Demo</h3>
+
+<p>Here&rsquo;s a <a href="/demo/css-generated-content.html">demo</a> of the shapes you can create.</p>
+
+<p>Find out about all the crazy cool CSS content you can create &ndash; <a href="http://css-tricks.com/pseudo-element-roundup/">http://css-tricks.com/pseudo-element-roundup/</a></p>
+
+<h3>Unicode entities</h3>
+
+<p>Look at all these fun unicode entities you can use.</p>
+
+<div style="font-size: 6em;">♞ ☂ ★ ❤</div>
+
+
+<p>Find lots of nice Unicode to use here <a href="http://copypastecharacter.com">copypastecharacter.com</a> and here <a href="http://unicode-table.com">unicode-table.com</a></p>
+
+<p>You can copy and paste the entity directly as it is ♞ or you can convert it to a CSS Hex value using <a href="http://www.evotech.net/articles/testjsentities.html">Entity Conversion Calculator</a></p>
+
+<blockquote><p>CSS &lsquo;content&rsquo; does not accept named entities or regular numeric entities such as &#64;, but does render ASCII text and unicode.
+<a href="http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/">~ evotech.net &ndash; Using Unicode</a></p></blockquote>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Tooltip</li>
+<li>Contact detail icons</li>
+<li>CSS Shapes</li>
+<li>CSS Ribbon</li>
+</ul>
+
+
+<h3>Support:</h3>
+
+<p>IE8+ (IE6 &amp; 7 don&rsquo;t support the :before :after pseudo class)</p>
+
+<h3>Further reading:</h3>
+
+<p><a href="http://www.standardista.com/css3/creating-counters-with-generated-content/">standardista.com &ndash; Generated content</a></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://nicolasgallagher.com/micro-clearfix-hack/">http://nicolasgallagher.com/micro-clearfix-hack/</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

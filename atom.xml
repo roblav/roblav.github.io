@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Rob Lav]]></title>
+  <title><![CDATA[RobLav]]></title>
   <link href="http://roblav.github.io/atom.xml" rel="self"/>
   <link href="http://roblav.github.io/"/>
-  <updated>2013-10-16T13:05:34+01:00</updated>
+  <updated>2013-11-15T15:09:51+00:00</updated>
   <id>http://roblav.github.io/</id>
   <author>
     <name><![CDATA[Rob Lavender]]></name>
@@ -12,6 +12,406 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Omega 4]]></title>
+    <link href="http://roblav.github.io/blog/2013/11/14/omega-4/"/>
+    <updated>2013-11-14T16:16:00+00:00</updated>
+    <id>http://roblav.github.io/blog/2013/11/14/omega-4</id>
+    <content type="html"><![CDATA[<h2>Are you ready for Omega 4?</h2>
+
+<p>Over the past couple of years I&rsquo;ve been used Omega 3 as my base theme of choice. It provides plenty of features to get up and running quickly; creating sub-themes using drush, exporting theme settings to the info file (thanks to Omega Tools).</p>
+
+<p>Omega 3 provides the best in combining command line functions with a user interface to make sure a lot of hard work is done for you; easy toggle options for default css files, <del>responsive</del> adaptive web design available to turn on when required.</p>
+
+<p>All of these features have made Omega 3 the de facto standard for a lot of Drupal themers.</p>
+
+<!-- more -->
+
+
+<h3>What about Omega 4?</h3>
+
+<p>Omega 4 is a bold progression to keep Omega up to date with the latest best practices, using all that SASS and Compass have to offer. Currently this means to get the best out of the Omega you will need to get your hands dirty in the command line; which in my experience is not a bad thing at all.</p>
+
+<p>The first time I had heard about Omega 4 was at the Frontend United conference in London April 2013 where I was speaking to Matt Smith about it; Matt is one of the maintainers of Omega 4. A lot of what he showed me at the time went a little over my head, as it seemed so far removed from Omega 3, and even he questioned if it should be called Omega at all. Sam Richards (Snugug) was one of the speakers at the conference, and his talk also had the same effect of tickling my ears with talk about the Compass extensions Singularity and Breakpoint, which make creating grids and responsive design easier to manage.</p>
+
+<p>After the conference I took a peak under the hood of Omega 4 and the Compass extensions Snugug highlighted, but it was all a little bit too much for me to take on board. Thankfully, over the last couple of months I&rsquo;ve had the opportunity to learn a few things about Ruby Version Manager, installing various ruby gems, playing a little with Angular JS and tractor, poking around in the Radix theme and getting a better understanding of how it uses Ruby Gems to add Twitter Bootstrap features. Plus, getting to grips with responsive web design, and understanding some of the common perils and pitfalls that are par for the course of creating responsive themes.</p>
+
+<p>All of this experience has provided invaluable knowledge of where web design and frontend development of the future is going, and Omega 4 has embraced the future and is determined to provide Drupal themers with the tools that they need to embrace it too!</p>
+
+<p>The rest of this article is going to focus on the components of Omega 4 and hopefully make it easier for people to get their head around them. Lets get to it.</p>
+
+<h3>Assumptions</h3>
+
+<p>Before we start there&rsquo;s a caveat, you will need an understanding of Drush and SASS/Compass. I&rsquo;m not going to go in to any detail about these two. They have been around long enough that if you were using Omega 3 you should be familiar with Drush and SASS/Compass already.</p>
+
+<h3>Omega 4</h3>
+
+<p>First look at Omega 4 there are just 2 directories in the theme:</p>
+
+<ul>
+<li><p><strong>ohm</strong> &ndash; A demo theme, placed in the main directory because of problems with inheritance.</p></li>
+<li><p><strong>omega</strong> &ndash; The main Omega 4 theme, including the starterkits/default directory with is the basis for creating a sub-theme.</p></li>
+</ul>
+
+
+<p>Note: Omega Tools module is no longer required as the core functionality this provided now comes as standard.</p>
+
+<p><strong>Starterkits</strong></p>
+
+<pre><code>startkits/default
+</code></pre>
+
+<p>Lets take a look under the hood of the default starter kit to get an idea of how it all works. This is what is included:</p>
+
+<ul>
+<li>RVM and Ruby Gems</li>
+<li>Bundler</li>
+<li>Susy or Singularity Grid System</li>
+<li>Breakpoint</li>
+<li>Toolkit</li>
+<li>Polyfills</li>
+<li>Guard or Grunt</li>
+</ul>
+
+
+<h2>What is RVM and Ruby Gems?</h2>
+
+<p>It is recommended that to use Omega 4 you should use RVM (Ruby Version Manager). RVM will provide you with the ability to create a consistent environment for you and people you work with. One of the problems with using Ruby is as things get updated you may find you get conflicts, so to avoid any issues if everyone is using the same versions of all the Ruby Gems, for any particular project, then everything will work as expected. If you start a new project and you want to use the latest versions, no problem just create a new gem set and your good to go, you can switch from one project to the next and have it setup so you only ever use the correct gems for that project.</p>
+
+<p>RVM comes with a set of default gems including &lsquo;bundler&rsquo;, &lsquo;rake&rsquo;, &lsquo;rubygems-bundler&rsquo; and &lsquo;dvm&rsquo; gems.</p>
+
+<p>In Omega 4 Startkit there are 2 files for use with RVM:</p>
+
+<ul>
+<li><p><strong>.ruby-gemset</strong> &ndash; This file contains the name of the RVM gem set to use.</p></li>
+<li><p><strong>.ruby-version</strong> &ndash; This file contains the version of ruby to use.</p></li>
+</ul>
+
+
+<h3>Bundler</h3>
+
+<p>RVM helps to have per project environments to make sure we are using the same version of ruby gems as other people we work with, where does Bundler fit in? Think of RVM being like a shopping bag that contains all our gems, Bundler is a shopping list that defines the gems that we want.</p>
+
+<p>Lets take a look at 2 files in the Omega 4 directory, Gemfile and Gemfile.lock.</p>
+
+<p><strong>Gemfile</strong></p>
+
+<p>This provides a shopping list of all the Gems that are required for our project.</p>
+
+<pre><code>  # Sass, Compass and extensions.
+  gem 'sass'                        # Sass.
+  gem 'sass-globbing'               # Import Sass files based on blobbing pattern.
+  gem 'compass'                     # Framework built on Sass.
+  gem 'compass-validator'       # So you can `compass validate`.
+  gem 'compass-normalize'   # Compass version of normalize.css.
+  gem 'compass-rgbapng'         # Turns rgba() into .png's for backwards compatibility.
+
+  # Grid Frameworks
+  gem 'susy'                        # Susy grid framework.
+  gem 'singularity's'               # Alternative to the Susy grid framework.
+
+  gem 'toolkit'                     # Compass utility from the fabulous Snugug.
+  gem 'breakpoint'                  # Manages CSS media queries.
+  gem 'oily_png'                    # Faster Compass sprite generation.
+  gem 'css_parser'                  # Helps `compass stats` output statistics.
+
+  # Guard
+  gem 'guard'                       # Guard event handler.
+  gem 'guard-compass'           # Compile on sass/scss change.
+  gem 'guard-shell'                 # Run shell commands.
+  gem 'guard-livereload'            # Browser reload.
+  gem 'yajl-ruby'                   # Faster JSON with LiveReload in the browser.
+</code></pre>
+
+<p><strong>Gemfile.lock</strong></p>
+
+<p>This file holds all of the specific version details to keep our environment consistent.</p>
+
+<pre><code>GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.5)
+    breakpoint (2.0.5)
+      compass (&gt;= 0.12.1)
+      sass (&gt;= 3.2.0)
+    chunky_png (1.2.8)
+    color-schemer (0.2.5)
+      compass (~&gt; 0.12)
+      compass-blend-modes (~&gt; 0.0.2)
+    compass (0.12.2)
+      chunky_png (~&gt; 1.2)
+      fssm (&gt;= 0.2.7)
+      sass (~&gt; 3.1)
+</code></pre>
+
+<p>With these files in place all we need to run is:</p>
+
+<pre><code># bundle install
+</code></pre>
+
+<p>This will download the specific versions of the Gems and add them to our RVM gem set.</p>
+
+<h2>Singularity</h2>
+
+<p><a href="https://github.com/Team-Sass/Singularity">https://github.com/Team-Sass/Singularity</a></p>
+
+<p>Omega 4 is bundled with 2 grid systems, Susy and SingularityGS. Both offer similar features so choose one and go for it.</p>
+
+<p>The benefits of using these grid systems is that instead of using class names, like &lsquo;grid-6&rsquo;, dotted around your HTML files you use the container structures that are already in place. The means that your grid is more semantic when developing with responsive in mind. As your view port gets smaller what tends to happen is at a mobile size the grid becomes 1 column. With a non-semantic grid your container will still have a class of &lsquo;grid-6&rsquo; but it&rsquo;s no longer spanning 6 columns it&rsquo;s spanning 1.</p>
+
+<p>Rather than give a comprehensive overview of how Susy or SingularityGS work, I&rsquo;d recommend testing them out for yourself.</p>
+
+<p>Here&rsquo;s how it an example of how to set up your sass file:</p>
+
+<pre><code>@import "singularitygs";
+
+$grids: 6;
+
+body {
+  @include background-grid; //Display the grid for debugging purposes
+}
+
+$grids: 1 1 1 1;
+
+Singluarity works with breakpoint
+
+$grids: 4;
+$grids: add-grid(6 at 30em);
+$grids: add-grid(12 at 50em);
+
+Example
+
+$grids: 12;
+
+body{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.l-page {
+  @include background-grid;
+}
+
+.l-main{
+  @include clearfix;
+}
+
+.l-content{
+  @include grid-span(8, 5);
+}
+
+.l-region--sidebar-first{
+  @include grid-span(4, 1);
+}
+</code></pre>
+
+<h2>Breakpoint</h2>
+
+<p><a href="https://github.com/Team-Sass/breakpoint">https://github.com/Team-Sass/breakpoint</a></p>
+
+<p><a href="http://breakpoint-sass.com/">http://breakpoint-sass.com/</a></p>
+
+<p>Use Breakpoint to write the media queries for you.</p>
+
+<p>A major benefits of using breakpoint is the creation of a no media query css file to support IE8 and lower. Using mobile first we build layouts for mobiles and then build out for larger viewports. As IE8 and lower don&rsquo;t support media queries they would only get the mobile layout, but using SASS and breakpoint we can provide IE8 and lower with a special css file, added using conditional comments, that contains the correct layout styles.</p>
+
+<p>Here&rsquo;s what it looks like in your sass file:</p>
+
+<pre><code>$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: false;
+
+body {
+  background: dodger blue;
+  @include breakpoint(567px, $no-query: true) {
+    background: green;
+  }
+}
+</code></pre>
+
+<h2>Toolkit</h2>
+
+<p><a href="https://github.com/Team-Sass/toolkit">https://github.com/Team-Sass/toolkit</a></p>
+
+<p>There&rsquo;s too much to list, go check it out.</p>
+
+<h2>Polyfills</h2>
+
+<p>Omega 4 gives you the option of several polyfills to force older browsers to work with the latest techniques.</p>
+
+<ul>
+<li><p>selectivizr</p></li>
+<li><p>html5shiv</p></li>
+<li><p>respond</p></li>
+<li><p>matchmedia</p></li>
+<li><p>pie</p></li>
+</ul>
+
+
+<p>There are 2 options to get these polyfills into your theme either using drush make or Bower</p>
+
+<p><strong>Make file </strong> &ndash; libraries.make</p>
+
+<p><strong>Bower</strong> &ndash; .bowerrc, bower.json</p>
+
+<p><strong>Creating a Sub-theme</strong></p>
+
+<p>If you use RVM and Drush when you create a sub-theme the polyfills are automatically downloaded and added for you.</p>
+
+<h2>Guard or Grunt</h2>
+
+<h3>Guard</h3>
+
+<p>Guard provides automation for some features such as automatically compiling your sass files, reloading the browser, clearing Drupal theme cache. Guard makes your theme development quicker.</p>
+
+<p><a href="https://github.com/guard/guard">https://github.com/guard/guard</a></p>
+
+<p><strong>Guardfile</strong> &ndash; This file holds the configuration for Guard.</p>
+
+<p><strong>Note:</strong> To use guard make sure you enable the live reload browser plugin</p>
+
+<h3>Grunt</h3>
+
+<p>Grunt also provide what Guard does and more, but requires Node.js so is harder to get working.</p>
+
+<p><strong>Gruntfile.js</strong> &ndash; This file holds the configuration for Grunt.</p>
+
+<h2>Conclusion</h2>
+
+<p>Taking this whistle stop tour of Omega 4 should give you a good idea of all of the different component parts of this base theme, and will hopefully encourage you to take it for a spin. Initially all that Omega 4 has to offer can be a little daunting, but once you begin to break things down and look at some of the components on there own you&rsquo;ll soon be using these tools for other projects that may or may not involve Omega 4 or Drupal.</p>
+
+<h2>Helpful resources</h2>
+
+<p><a href="https://drupal.org/node/1768686">Omega 4 Theme Documentation Handbook</a>
+The documention is a the best place to start. If all the new fandangled things like using Ruby is new to you make sure you read <a href="https://drupal.org/node/1936970">Setting up a proper front-end development stack</a></p>
+
+<p><a href="http://www.youtube.com/watch?v=CmTuvzbPduI">Omega 4.x Demonstration w/Sebastian aka fubhy</a></p>
+
+<p>3 hour demonstration, quite long well worth watching for a full overview of Omega 4.</p>
+
+<p><a href="https://vimeo.com/69736259">Omega 4: Introduction by Matt Smith co-maintainer</a></p>
+
+<p>Unfortunately not very good quality, so if you can get along, to his talk at Manchester Drupal Camp in November 2013. (Or probably more realistically watch it online afterward.)</p>
+
+<p><a href="http://munich2012.drupal.org/program/sessions/responsive-design-sass-compass-and-drupal-7.html">Responsive Design with Sass+Compass</a></p>
+
+<p>Really good overview of a lot of great SASS extensions that are provided in Omega 4. This is same presentation that I saw at Frontend United.</p>
+
+<p><a href="http://screencasts.org/episodes/how-to-use-rvm">Using RVM</a></p>
+
+<p>Watch this video to get an overview of RVM and why you should use it.</p>
+
+<p><a href="https://vimeo.com/63509346">Singularity</a></p>
+
+<p><a href="http://net.tutsplus.com/tutorials/tools-and-tips/guard-is-your-best-friend/">Guard</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CSS Generated Content]]></title>
+    <link href="http://roblav.github.io/blog/2013/10/25/css-generated-content/"/>
+    <updated>2013-10-25T16:44:00+01:00</updated>
+    <id>http://roblav.github.io/blog/2013/10/25/css-generated-content</id>
+    <content type="html"><![CDATA[<p><img src="http://roblav.github.io/images/css-gen-content-1.jpg" title="Examples of CSS Generated Content" ></p>
+
+<p>Generated content is content that can be added via css. The content doesn&rsquo;t appear in the DOM but is
+visable on the page to the user. For this reason generated content is perfect for design embelishments,
+but not good for user required content, as anyone using IE7 or older won&rsquo;t be able to see it.</p>
+
+<p>The other advantages are there is one less request to the server if it replaces an image on the page,
+and CSS shapes and Unicode entities can be scaled, unlike bitmap images.</p>
+
+<h3>How does it work</h3>
+
+<p>Use the :before or :after pseudo class to make use of the content property.</p>
+
+<pre><code>div:after {
+    content: "";
+}
+</code></pre>
+
+<p>If you use a clearfix class to clear floats, you&rsquo;ve probably already used generated content.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<pre><code>.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</code></pre>
+
+<!-- more -->
+
+
+<h3>Shapes Demo</h3>
+
+<p>Here&rsquo;s a <a href="http://roblav.github.io/demo/css-generated-content.html">demo</a> of the shapes you can create.</p>
+
+<p>Find out about all the crazy cool CSS content you can create &ndash; <a href="http://css-tricks.com/pseudo-element-roundup/">http://css-tricks.com/pseudo-element-roundup/</a></p>
+
+<h3>Unicode entities</h3>
+
+<p>Look at all these fun unicode entities you can use.</p>
+
+<div style="font-size: 6em;">♞ ☂ ★ ❤</div>
+
+
+<p>Find lots of nice Unicode to use here <a href="http://copypastecharacter.com">copypastecharacter.com</a> and here <a href="http://unicode-table.com">unicode-table.com</a></p>
+
+<p>You can copy and paste the entity directly as it is ♞ or you can convert it to a CSS Hex value using <a href="http://www.evotech.net/articles/testjsentities.html">Entity Conversion Calculator</a></p>
+
+<blockquote><p>CSS &lsquo;content&rsquo; does not accept named entities or regular numeric entities such as &#64;, but does render ASCII text and unicode.
+<a href="http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/">~ evotech.net &ndash; Using Unicode</a></p></blockquote>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Tooltip</li>
+<li>Contact detail icons</li>
+<li>CSS Shapes</li>
+<li>CSS Ribbon</li>
+</ul>
+
+
+<h3>Support:</h3>
+
+<p>IE8+ (IE6 &amp; 7 don&rsquo;t support the :before :after pseudo class)</p>
+
+<h3>Further reading:</h3>
+
+<p><a href="http://www.standardista.com/css3/creating-counters-with-generated-content/">standardista.com &ndash; Generated content</a></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="http://nicolasgallagher.com/micro-clearfix-hack/">http://nicolasgallagher.com/micro-clearfix-hack/</a><a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SASS Project setup]]></title>
+    <link href="http://roblav.github.io/blog/2013/10/25/sass-project-setup/"/>
+    <updated>2013-10-25T08:57:00+01:00</updated>
+    <id>http://roblav.github.io/blog/2013/10/25/sass-project-setup</id>
+    <content type="html"><![CDATA[<h2>.gitignore</h2>
+
+<pre><code>.sass-cache
+</code></pre>
+
+<h2>config.rb</h2>
+
+<pre><code>environment = :production
+
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+
+output_style = (environment == :development) ? :expanded : :compressed
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Responsive Web Design in Drupal]]></title>

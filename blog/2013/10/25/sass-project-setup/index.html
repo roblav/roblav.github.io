@@ -5,12 +5,11 @@
 	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
 	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>about  | RobLav</title>
+	<title>SASS Project setup  | RobLav</title>
 
 <meta name="author" content="Rob Lavender"> 
 
-<meta name="description" content="About me
-"> <meta name="keywords" content="">
+<meta name="description" content=".gitignore .sass-cache config.rb environment = :production # You can select your preferred output style here (can be overridden via the command line &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -95,23 +94,65 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner"><article class="page">
-    <div class="entry-content"><h1>About me</h1>
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">SASS Project Setup</h2>
+	<div class="entry-content"><h2>.gitignore</h2>
+
+<pre><code>.sass-cache
+</code></pre>
+
+<h2>config.rb</h2>
+
+<pre><code>environment = :production
+
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+
+output_style = (environment == :development) ? :expanded : :compressed
+</code></pre>
 </div>
-</article>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
 
-<aside class="sidebar">
+
+
+
+
   
-    <section>
-  <h1>About Me</h1>
-  <p>A little something about me.</p>
-</section>
 
-  
-</aside>
+
+<time datetime="2013-10-25T08:57:00+01:00" pubdate data-updated="true">Oct 25<span>th</span>, 2013</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sass/'>sass</a>
+
+</div>
+
+
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sass | RobLav]]></title>
+  <link href="http://roblav.github.io/blog/categories/sass/atom.xml" rel="self"/>
+  <link href="http://roblav.github.io/"/>
+  <updated>2013-11-15T15:09:51+00:00</updated>
+  <id>http://roblav.github.io/</id>
+  <author>
+    <name><![CDATA[Rob Lavender]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SASS Project setup]]></title>
+    <link href="http://roblav.github.io/blog/2013/10/25/sass-project-setup/"/>
+    <updated>2013-10-25T08:57:00+01:00</updated>
+    <id>http://roblav.github.io/blog/2013/10/25/sass-project-setup</id>
+    <content type="html"><![CDATA[<h2>.gitignore</h2>
+
+<pre><code>.sass-cache
+</code></pre>
+
+<h2>config.rb</h2>
+
+<pre><code>environment = :production
+
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+
+output_style = (environment == :development) ? :expanded : :compressed
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
