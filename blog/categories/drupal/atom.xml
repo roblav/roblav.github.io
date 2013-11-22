@@ -4,7 +4,7 @@
   <title><![CDATA[Category: drupal | RobLav]]></title>
   <link href="http://roblav.github.io/blog/categories/drupal/atom.xml" rel="self"/>
   <link href="http://roblav.github.io/"/>
-  <updated>2013-11-15T15:19:48+00:00</updated>
+  <updated>2013-11-22T15:55:43+00:00</updated>
   <id>http://roblav.github.io/</id>
   <author>
     <name><![CDATA[Rob Lavender]]></name>
@@ -20,9 +20,9 @@
     <id>http://roblav.github.io/blog/2013/11/14/omega-4</id>
     <content type="html"><![CDATA[<h2>Are you ready for Omega 4?</h2>
 
-<p>Over the past couple of years I&rsquo;ve been used Omega 3 as my base theme of choice. It provides plenty of features to get up and running quickly; creating sub-themes using drush, exporting theme settings to the info file (thanks to Omega Tools).</p>
+<p>Over the past couple of years I&rsquo;ve been using Omega 3 as my base theme of choice. It provides plenty of features to get up and running quickly; creating sub-themes using drush, exporting theme settings to the info file, thanks to Omega Tools.</p>
 
-<p>Omega 3 provides the best in combining command line functions with a user interface to make sure a lot of hard work is done for you; easy toggle options for default css files, <del>responsive</del> adaptive web design available to turn on when required.</p>
+<p>Omega 3 provides the best in a combination of drush command line functions with a comprehensive user interface to make sure a lot of hard work is already done for you; easy toggle options for default css files, <del>responsive</del> adaptive web design available to turn on when required.</p>
 
 <p>All of these features have made Omega 3 the de facto standard for a lot of Drupal themers.</p>
 
@@ -31,19 +31,19 @@
 
 <h3>What about Omega 4?</h3>
 
-<p>Omega 4 is a bold progression to keep Omega up to date with the latest best practices, using all that SASS and Compass have to offer. Currently this means to get the best out of the Omega you will need to get your hands dirty in the command line; which in my experience is not a bad thing at all.</p>
+<p>Omega 4 is a bold progression to keep Omega up to date with the latest in front end development best practices, using all that SASS and Compass have to offer. Currently it means to get the best out of the Omega 4 you will need to get your hands dirty in the command line. Which in my experience is not a bad thing at all.</p>
 
-<p>The first time I had heard about Omega 4 was at the Frontend United conference in London April 2013 where I was speaking to Matt Smith about it; Matt is one of the maintainers of Omega 4. A lot of what he showed me at the time went a little over my head, as it seemed so far removed from Omega 3, and even he questioned if it should be called Omega at all. Sam Richards (Snugug) was one of the speakers at the conference, and his talk also had the same effect of tickling my ears with talk about the Compass extensions Singularity and Breakpoint, which make creating grids and responsive design easier to manage.</p>
+<p>I was at the Frontend United conference in London, April 2013, when I first heard about Omega 4, when I was chatting to Matt Smith; one of the maintainers of Omega 4. A lot of what he showed me went a little over my head, I wasn&rsquo;t particularly au fait with using Ruby gems and it seemed so far removed from Omega 3 even Matt questioned if it should be called Omega at all. Sam Richards (Snugug) was one of the speakers at the conference. His talk which included a demo of the Compass extensions Singularity and Breakpoint, which make creating grids and responsive design easier to manage, also had the same effect of peeking my interest in these new shiny tools.</p>
 
-<p>After the conference I took a peak under the hood of Omega 4 and the Compass extensions Snugug highlighted, but it was all a little bit too much for me to take on board. Thankfully, over the last couple of months I&rsquo;ve had the opportunity to learn a few things about Ruby Version Manager, installing various ruby gems, playing a little with Angular JS and tractor, poking around in the Radix theme and getting a better understanding of how it uses Ruby Gems to add Twitter Bootstrap features. Plus, getting to grips with responsive web design, and understanding some of the common perils and pitfalls that are par for the course of creating responsive themes.</p>
+<p>After the conference I took a peak under the hood of Omega 4 and the Compass extensions Snugug highlighted, but at the time it was all a little bit too much for me to take on board. Anyway who has time to keep up with all the latest trends! Thankfully, over the last couple of months I&rsquo;ve had the opportunity to learn a few things about Ruby Version Manager, installing various ruby gems, playing a little with Angular JS and tractor, poking around in the Radix theme and getting a better understanding of how it uses Ruby Gems to add Twitter Bootstrap features. Plus, getting to grips with responsive web design, and understanding some of the common perils and pitfalls that are par for the course of creating responsive themes.</p>
 
-<p>All of this experience has provided invaluable knowledge of where web design and frontend development of the future is going, and Omega 4 has embraced the future and is determined to provide Drupal themers with the tools that they need to embrace it too!</p>
+<p>These other projects have given hands on experience of the future of web design and frontend development, and I could finally begin to see the bigger picture of how Omega 4 is embracing the future and is determined to provide Drupal themers with the tools for them to embrace it too!</p>
 
-<p>The rest of this article is going to focus on the components of Omega 4 and hopefully make it easier for people to get their head around them. Lets get to it.</p>
+<p>Omega 4 is really a melting pot of many of the best frontend components all wrapped up in one package. The rest of this article is going to focus on the taking a closer look at each of those components to get a better understanding of how it all fits together.</p>
 
 <h3>Assumptions</h3>
 
-<p>Before we start there&rsquo;s a caveat, you will need an understanding of Drush and SASS/Compass. I&rsquo;m not going to go in to any detail about these two. They have been around long enough that if you were using Omega 3 you should be familiar with Drush and SASS/Compass already.</p>
+<p>Before we start there&rsquo;s a small caveat, you will need an understanding of Drush and SASS/Compass. I&rsquo;m not going to go in to any detail about these two. They have been around long enough that if you were using Omega 3 you should be familiar with Drush and SASS/Compass already.</p>
 
 <h3>Omega 4</h3>
 
